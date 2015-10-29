@@ -15,5 +15,6 @@
         <module>modules</module>
         <module>books</module>
         <module>studies</module>
+        <module>opensources</module>
     </modules>
 </project>
