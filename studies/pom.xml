@@ -12,7 +12,7 @@
         <relativePath>../modules/parent/</relativePath>
     </parent>
 
-    <groupId>com.diguage.dangle</groupId>
+    <!--<groupId>com.diguage.dangle</groupId>-->
     <artifactId>dangle-studies</artifactId>
     <name>Dangle :: Studies</name>
     <packaging>pom</packaging>
@@ -24,5 +24,8 @@
         <module>scala</module>
         <module>avro</module>
         <module>protobuf</module>
+        <module>log4j2</module>
+        <module>weixin</module>
+        <module>foundation</module>
     </modules>
 </project>
