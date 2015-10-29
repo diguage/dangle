@@ -19,4 +19,22 @@ public class ThreadDemo {
 
         thread.start();
     }
+
+    /**
+     * 思考一下输出哪个?为什么?
+     */
+    @Test
+    public void testThreadAndRunnable() {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Runnable Run");
+            }
+        }) {
+            public void run() {
+                System.out.println("Thread Run");
+            }
+        };
+        thread.start();
+    }
 }
