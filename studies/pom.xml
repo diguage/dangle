@@ -27,5 +27,8 @@
         <module>log4j2</module>
         <module>weixin</module>
         <module>foundation</module>
+        <module>io</module>
+        <module>guava</module>
+        <module>base</module>
     </modules>
 </project>
