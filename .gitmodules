@@ -1,0 +1,24 @@
+[submodule "opensources/fastweixin"]
+	path = opensources/fastweixin
+	url = git@git.oschina.net:pyinjava/fastweixin.git
+[submodule "opensources/mpsdk4j"]
+	path = opensources/mpsdk4j
+	url = git@github.com:elkan1788/mpsdk4j.git
+[submodule "opensources/social-sdk"]
+	path = opensources/social-sdk
+	url = git@github.com:belerweb/social-sdk.git
+[submodule "opensources/wechat4j"]
+	path = opensources/wechat4j
+	url = git@github.com:sword-org/wechat4j.git
+[submodule "opensources/weixin-java-tools"]
+	path = opensources/weixin-java-tools
+	url = git@github.com:chanjarster/weixin-java-tools.git
+[submodule "opensources/weixin-popular"]
+	path = opensources/weixin-popular
+	url = git@github.com:liyiorg/weixin-popular.git
+[submodule "opensources/weixin-robot-java"]
+	path = opensources/weixin-robot-java
+	url = git@github.com:linux-china/weixin-robot-java.git
+[submodule "opensources/weixin4j"]
+	path = opensources/weixin4j
+	url = git@github.com:foxinmy/weixin4j.git

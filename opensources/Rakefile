@@ -1,0 +1,53 @@
+#
+# 检查本目录下所有子目录的 Git 状态
+#
+# D瓜哥，2016-01-04
+
+namespace :git do
+  def is_repo(item)
+    File.directory? item and !item.start_with?('.')
+  end
+  desc 'Repository status'
+  task :status do
+    Dir.foreach(".") do |item|
+      if is_repo item
+        puts "=== #{item} start ======="
+        puts `cd #{item} && git status`
+        puts "=== #{item} end =========\n\n"
+      end
+    end
+  end
+
+  desc 'Repository stash'
+  task :stash do
+    Dir.foreach(".") do |item|
+      if is_repo item
+        puts "=== #{item} stashing ======="
+        puts `cd #{item} && git stash`
+        puts "\n"
+      end
+    end
+  end
+
+  desc 'Repository checkout master'
+  task :master => :stash do
+    Dir.foreach(".") do |item|
+      if is_repo item
+        puts "=== #{item} checkout to master ====="
+        puts `cd #{item} && git checkout master`
+        puts "\n"
+      end
+    end
+  end
+
+  desc 'Repository pull'
+  task :pull => :master do
+    Dir.foreach(".") do |item|
+      if is_repo item
+        puts "=== #{item} pull ======="
+        puts `cd #{item} && git pull`
+        puts ""
+      end
+    end
+  end
+end
