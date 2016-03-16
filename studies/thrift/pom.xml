@@ -18,7 +18,7 @@
     <properties>
         <thrift.version>0.9.3</thrift.version>
 
-        <thrift-plugin.version>0.1.11</thrift-plugin.version>
+        <thrift-plugin.version>0.1.12</thrift-plugin.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -28,11 +28,28 @@
             <groupId>org.apache.thrift</groupId>
             <artifactId>libthrift</artifactId>
             <version>${thrift.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-logging</artifactId>
+                    <groupId>commons-logging</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.twitter</groupId>
+            <artifactId>scrooge-core_2.11</artifactId>
+            <version>4.5.0</version>
         </dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
@@ -57,6 +74,48 @@
                 <version>${thrift-plugin.version}</version>
                 <configuration>
                     <thriftExecutable>/usr/local/bin/thrift</thriftExecutable>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>thrift-sources</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>thrift-test-sources</id>
+                        <phase>generate-test-sources</phase>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>com.twitter</groupId>
+                <artifactId>scrooge-maven-plugin</artifactId>
+                <version>4.3.0</version>
+                <configuration>
+                    <thriftSourceRoot>${basedir}/src/main/thrift</thriftSourceRoot>
+                    <includes>
+                        <set>tutorial.thrift</set>
+                    </includes>
+                    <!--<outputDirectory>${basedir}/src/main/gen/</outputDirectory>-->
+                    <thriftNamespaceMappings>
+                        <thriftNamespaceMapping>
+                            <from>com.diguage.dangle.thrift.gen</from>
+                            <to>com.diguage.dangle.thrift.gen</to>
+                        </thriftNamespaceMapping>
+                    </thriftNamespaceMappings>
+                    <language>java</language> <!-- default is scala -->
+                    <!--<thriftOpts>-->
+                    <!--&lt;!&ndash; add other Scrooge command line options using thriftOpts &ndash;&gt;-->
+                    <!--<thriftOpt>&#45;&#45;finagle</thriftOpt>-->
+                    <!--</thriftOpts>-->
+                    <!-- tell scrooge to not to build the extracted thrift files (defaults to true) -->
+                    <buildExtractedThrift>false</buildExtractedThrift>
                 </configuration>
                 <executions>
                     <execution>
