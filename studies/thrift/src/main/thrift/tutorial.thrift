@@ -54,7 +54,7 @@
  * searching relative to any paths specified with the -I compiler flag.
  *
  * Included objects are accessed using the name of the .thrift file as a
- * prefix. i.e. shared.SharedObject
+ * prefix. i.t. shared.SharedObject
  */
 include "./shared.thrift"
 
