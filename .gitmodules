@@ -22,3 +22,9 @@
 [submodule "opensources/weixin4j"]
 	path = opensources/weixin4j
 	url = git@github.com:foxinmy/weixin4j.git
+[submodule "opensources/jeewx-api"]
+	path = opensources/jeewx-api
+	url = git@git.oschina.net:jeecg/jeewx-api.git
+[submodule "opensources/MCMS"]
+	path = opensources/MCMS
+	url = git@git.oschina.net:mingSoft/MCMS.git
