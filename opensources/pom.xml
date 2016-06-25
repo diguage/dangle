@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.diguage.dangle</groupId>
+        <artifactId>dangle-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../modules/parent/</relativePath>
+    </parent>
+
+    <groupId>com.diguage.dangle</groupId>
+    <artifactId>dangle-opensources</artifactId>
+    <name>Dangle :: OpenSources</name>
+    <packaging>pom</packaging>
+
+
+    <modules>
+        <module>fastweixin</module>
+        <module>mpsdk4j</module>
+        <module>social-sdk</module>
+        <module>weixin-java-tools</module>
+        <module>weixin-popular</module>
+        <module>weixin-robot-java</module>
+        <module>weixin4j</module>
+    </modules>
+</project>
