@@ -29,5 +29,6 @@
         <module>guava</module>
         <module>base</module>
         <module>cl1024-spider</module>
+        <module>byte-buddy</module>
     </modules>
 </project>

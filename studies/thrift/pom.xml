@@ -18,7 +18,7 @@
     <properties>
         <thrift.version>0.9.3</thrift.version>
 
-        <thrift-plugin.version>0.1.12</thrift-plugin.version>
+        <thrift-plugin.version>0.1.11</thrift-plugin.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>

@@ -18,5 +18,6 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>java8-in-action</module>
     </modules>
 </project>

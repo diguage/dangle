@@ -16,7 +16,7 @@
     <name>Dangle :: Studies :: Scala</name>
 
     <properties>
-        <scala.version>2.11.7</scala.version>
+        <scala.version>2.11.8</scala.version>
 
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -62,6 +62,8 @@
     <build>
         <plugins>
             <plugin>
+                <!-- 参考：http://www.cnblogs.com/zhoudayang/p/5027307.html[scala和maven整合实践 - ZHOU YANG - 博客园] -->
+                <!-- mvn clean scala:compile compile package -->
                 <groupId>org.scala-tools</groupId>
                 <artifactId>maven-scala-plugin</artifactId>
                 <version>2.15.2</version>

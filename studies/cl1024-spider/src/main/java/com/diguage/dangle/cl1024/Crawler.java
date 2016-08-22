@@ -176,15 +176,22 @@ public class Crawler {
     }
 
     public static void main(String[] args) {
-        int threadCount = 2;
-        long cacheByteCount = 1024L * 1024L * 100L;
-
-        Cache cache = new Cache(new File("./cache.txt"), cacheByteCount);
-        OkHttpClient client = new OkHttpClient.Builder().cache(cache).build();
-
-        Crawler crawler = new Crawler(client);
-        crawler.addUrl(HttpUrl.parse(crawler.firstPage));
-//        crawler.addUrl(HttpUrl.parse(String.format(crawler.urlFormater, 5)));
-        crawler.parallelDrainQueue(threadCount);
+//        int threadCount = 2;
+//        long cacheByteCount = 1024L * 1024L * 100L;
+//
+//        Cache cache = new Cache(new File("./cache.txt"), cacheByteCount);
+//        OkHttpClient client = new OkHttpClient.Builder().cache(cache).build();
+//
+//        Crawler crawler = new Crawler(client);
+//        crawler.addUrl(HttpUrl.parse(crawler.firstPage));
+////        crawler.addUrl(HttpUrl.parse(String.format(crawler.urlFormater, 5)));
+//        crawler.parallelDrainQueue(threadCount);
+        String url = "http://shanghai.guolele.com/order/20160731133153352501";
+        Pattern pattern = Pattern.compile(".*/(\\w+)");
+        Matcher pageMatcher = pattern.matcher(url);
+        System.out.println(pageMatcher.find());
+        System.out.println(pageMatcher.group(1));
     }
+
+
 }
